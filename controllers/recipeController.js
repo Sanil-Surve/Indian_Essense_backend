@@ -1,7 +1,7 @@
 const openai = require("../config/openaiConfig");
 
 const suggestRecipes = async (req, res) => {
-  const { ingredients, preferences } = req.body;
+  const { ingredients, preferences, language } = req.body;
 
   const recipesArray = [
     {
@@ -142,7 +142,7 @@ const suggestRecipes = async (req, res) => {
     {
       role: "user",
       content: `
-        Suggest Indian recipes based on:
+        Suggest Indian recipes in ${language} language based on:
         Ingredients: ${ingredients.join(", ")}
         Preferences: ${preferences}
         Reference: ${recipesArray
