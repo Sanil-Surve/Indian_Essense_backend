@@ -154,7 +154,7 @@ const suggestRecipes = async (req, res) => {
 
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-4o",
+      model: "gpt-4",
       messages,
       max_tokens: 1000,
       temperature: 0.7,
